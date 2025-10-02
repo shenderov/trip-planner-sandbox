@@ -1,0 +1,100 @@
+/* App container + title */
+.app-container {
+  margin: 2rem;
+  font-family: system-ui, sans-serif;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827 !important;
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-title {
+    color: #f3f4f6;
+  }
+}
+
+/* Loading card */
+.trip-loading {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 3-dot animation: staggered opacity */
+.dots {
+  display: inline-flex;
+  gap: 0.15rem;
+  margin-left: 0.15rem;
+}
+
+.dots > span {
+  opacity: 0;
+  animation: dotBlink 1.2s infinite;
+}
+
+.dots > span:nth-child(1) {
+  animation-delay: 0s;
+}
+.dots > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dots > span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotBlink {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .trip-loading {
+    color: #818cf8;
+    background: #1e293b;
+    border: 1px solid #334155;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dots > span {
+    animation: none;
+    opacity: 1;
+  }
+}

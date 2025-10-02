@@ -1,0 +1,97 @@
+.trip-result {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.trip-destination {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+  text-align: center;
+}
+
+.trip-section {
+  margin-bottom: 1rem;
+}
+.trip-section:last-child {
+  margin-bottom: 0;
+}
+
+.trip-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #374151;
+}
+
+.trip-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+  color: #1f2937;
+}
+
+.trip-list-item {
+  margin-bottom: 0.25rem;
+}
+
+.trip-text {
+  margin: 0;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.trip-text.empty {
+  color: #6b7280; /* gray-500 */
+  font-style: italic;
+}
+
+.trip-error {
+  color: #dc2626;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .trip-result {
+    background: #1e293b;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  .trip-destination {
+    color: #f3f4f6;
+  }
+  .trip-subtitle {
+    color: #cbd5e1;
+  }
+  .trip-list,
+  .trip-text {
+    color: #e5e7eb;
+  }
+  .trip-text.empty {
+    color: #9ca3af;
+  }
+  .trip-error {
+    color: #f87171;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
